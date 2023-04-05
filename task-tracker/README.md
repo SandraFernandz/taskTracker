@@ -1,7 +1,7 @@
 # Equiv
 
 CarForm = ListForm
-CarSearch = ListSearch
+CarSearch = TaskSearch
 CarList = TaskList
 CarValue = TaskDuration
 TotalValue = TotalMinutes
