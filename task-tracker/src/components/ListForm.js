@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { changeDuration, changeName } from '../store';
+import { changeDuration, changeName, addTask } from '../store';
 
 const TaskForm = () => {
   const dispatch = useDispatch();
@@ -17,10 +17,14 @@ const TaskForm = () => {
     const taskDuration = parseInt(event.target.value) || 0;
     dispatch(changeDuration(taskDuration));
   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(addTask({ name: name, duration: duration }));
+  };
   return (
     <div>
       <h4>Add Task</h4>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <div>
             <label>Name</label>
@@ -34,6 +38,9 @@ const TaskForm = () => {
               type="number"
             />
           </div>
+        </div>
+        <div>
+          <button>Submit</button>
         </div>
       </form>
     </div>
