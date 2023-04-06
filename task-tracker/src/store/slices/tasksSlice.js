@@ -4,7 +4,7 @@ const tasksSlice = createSlice({
   name: 'tasks',
   initialState: {
     searchTask: '',
-    cars: [],
+    tasks: [],
   },
   reducers: {
     changeSearchTask(state, action) {
@@ -12,7 +12,7 @@ const tasksSlice = createSlice({
     },
     addTask(state, action) {
       // Assumption:
-      // action.payload === { name: 'ab', cost: 140}
+      // action.payload === { name: 'ab', duration: 140}
       state.tasks.push({
         name: action.payload.name,
         duration: action.payload.duration,
@@ -21,11 +21,11 @@ const tasksSlice = createSlice({
     },
     removeTask(state, action) {
       // Assumption:
-      // action.payload === id of the car we want to remove
-      const updated = state.cars.filter((car) => {
-        return car.id !== action.payload;
+      // action.payload === id of the task we want to remove
+      const updated = state.tasks.filter((task) => {
+        return task.id !== action.payload;
       });
-      state.cars = updated;
+      state.tasks = updated;
     },
   },
 });
