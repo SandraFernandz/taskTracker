@@ -25,22 +25,20 @@ const TaskForm = () => {
     <div>
       <h4>Add Task</h4>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="formContainer">
           <div>
-            <label>Name</label>
+            <label className="label">Name </label>
             <input value={name} onChange={handleNameChange} />
           </div>
           <div>
-            <label>Duration</label>
+            <label className="label">Duration </label>
             <input
               value={duration}
               onChange={handleDurationChange}
               type="number"
             />
           </div>
-        </div>
-        <div>
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </div>
       </form>
     </div>

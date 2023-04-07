@@ -7,8 +7,8 @@ const App = () => {
   return (
     <div>
       <ListForm />
-      <TaskList />
       <TaskSearch />
+      <TaskList />
       <TaskDuration />
     </div>
   );
