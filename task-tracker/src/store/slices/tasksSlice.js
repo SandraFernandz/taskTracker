@@ -4,7 +4,7 @@ const tasksSlice = createSlice({
   name: 'tasks',
   initialState: {
     searchTask: '',
-    tasks: [],
+    tasksData: [],
   },
   reducers: {
     changeSearchTask(state, action) {
@@ -13,7 +13,7 @@ const tasksSlice = createSlice({
     addTask(state, action) {
       // Assumption:
       // action.payload === { name: 'ab', duration: 140}
-      state.tasks.push({
+      state.tasksData.push({
         name: action.payload.name,
         duration: action.payload.duration,
         id: nanoid(),
@@ -22,10 +22,10 @@ const tasksSlice = createSlice({
     removeTask(state, action) {
       // Assumption:
       // action.payload === id of the task we want to remove
-      const updated = state.tasks.filter((task) => {
+      const updated = state.tasksData.filter((task) => {
         return task.id !== action.payload;
       });
-      state.tasks = updated;
+      state.tasksData = updated;
     },
   },
 });
