@@ -3,8 +3,10 @@ import { removeTask } from '../store/slices/tasksSlice';
 
 const TaskList = () => {
   const dispatch = useDispatch();
-  const tasks = useSelector((state) => {
-    return state.tasks.tasksData;
+  const tasks = useSelector(({ tasks: { tasksData, searchTask } }) => {
+    return tasksData.filter((task) =>
+      task.name.toLowerCase().includes(searchTask.toLowerCase())
+    );
   });
   const handleTaskDelete = (task) => {
     dispatch(removeTask(task.id));
