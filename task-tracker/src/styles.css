@@ -1,6 +1,7 @@
 body {
   background-color: #e9e1d3;
   font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .formContainer {
   display: flex;
@@ -21,4 +22,8 @@ input {
   border: none;
   border-radius: 4px;
   padding: 0px 12px;
+}
+.taskList {
+  display: flex;
+  justify-content: space-between;
 }

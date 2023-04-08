@@ -11,7 +11,7 @@ const TaskList = () => {
   };
   const renderedTasks = tasks.map((task) => {
     return (
-      <div key={task.id}>
+      <div key={task.id} className="taskList">
         <p>
           {task.name} {task.duration} Minutes
         </p>

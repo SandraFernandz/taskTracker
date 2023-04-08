@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { addTask } from './tasksSlice';
 
 const formSlice = createSlice({
   name: 'form',
@@ -13,6 +14,12 @@ const formSlice = createSlice({
     changeDuration(state, action) {
       state.duration = action.payload;
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(addTask, (state, action) => {
+      state.name = '';
+      state.duration = 0;
+    });
   },
 });
 
