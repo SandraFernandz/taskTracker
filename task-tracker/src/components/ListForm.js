@@ -14,7 +14,7 @@ const TaskForm = () => {
   };
 
   const handleDurationChange = (event) => {
-    const taskDuration = parseInt(event.target.value) || 0;
+    const taskDuration = parseInt(event.target.value) || '';
     dispatch(changeDuration(taskDuration));
   };
   const handleSubmit = (event) => {
