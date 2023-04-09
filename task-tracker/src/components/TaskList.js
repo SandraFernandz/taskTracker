@@ -24,7 +24,7 @@ const TaskList = () => {
     console.log(bold);
     return (
       <div key={task.id} className={`taskList ${bold && 'bold'}`}>
-        <p>
+        <p className="listContent">
           {task.name} {task.duration} Minutes
         </p>
         <button onClick={() => handleTaskDelete(task)}>Delete</button>

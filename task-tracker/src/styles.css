@@ -25,7 +25,14 @@ input {
 }
 .taskList {
   display: flex;
+  justify-content: center;
   justify-content: space-between;
+  padding: 0px 50px;
+}
+.listContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .bold {
   font-weight: bolder;
