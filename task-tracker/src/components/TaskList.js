@@ -3,17 +3,27 @@ import { removeTask } from '../store/slices/tasksSlice';
 
 const TaskList = () => {
   const dispatch = useDispatch();
-  const tasks = useSelector(({ tasks: { tasksData, searchTask } }) => {
-    return tasksData.filter((task) =>
-      task.name.toLowerCase().includes(searchTask.toLowerCase())
-    );
-  });
+  const { tasks, name } = useSelector(
+    ({ form, tasks: { tasksData, searchTask } }) => {
+      const filteredTasks = tasksData.filter((task) =>
+        task.name.toLowerCase().includes(searchTask.toLowerCase())
+      );
+      return {
+        tasks: filteredTasks,
+        name: form.name,
+      };
+    }
+  );
   const handleTaskDelete = (task) => {
     dispatch(removeTask(task.id));
   };
   const renderedTasks = tasks.map((task) => {
+    // decide if this task should be bold
+    // state.form.name
+    const bold = name && task.name.toLowerCase().includes(name.toLowerCase());
+    console.log(bold);
     return (
-      <div key={task.id} className="taskList">
+      <div key={task.id} className={`taskList ${bold && 'bold'}`}>
         <p>
           {task.name} {task.duration} Minutes
         </p>

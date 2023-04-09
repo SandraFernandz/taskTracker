@@ -27,3 +27,7 @@ input {
   display: flex;
   justify-content: space-between;
 }
+.bold {
+  font-weight: bolder;
+  background-color: #366e52;
+}
